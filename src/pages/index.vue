@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
+const sideBarVisible = ref(true)
 </script>
 
 <template>
-  <Navbar />
+  <Navbar @toggle="sideBarVisible = !sideBarVisible" />
   <div class="flex overflow-hidden bg-gray-50 pt-16 dark:bg-gray-900">
-    <Sidebar />
+    <Sidebar v-if="sideBarVisible" />
 
-    <div id="main-content" class="relative h-full w-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
+    <div id="main-content" class="relative h-screen w-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
       <main>
         <div class="px-4 pt-6">
           <div class="rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:p-6 xl:p-8">
@@ -14,188 +17,16 @@
             <div class="mb-4 flex items-center justify-between">
               <div>
                 <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">
-                  Transactions
+                  Donaciones
                 </h3>
-                <span class="text-base font-normal text-gray-500 dark:text-gray-400">This is a list of
-                  latest transactions</span>
+                <span class="text-base font-normal text-gray-500 dark:text-gray-400">Esta es una lista de las donaciones más recientes</span>
               </div>
               <div class="flex-shrink-0">
-                <a href="#" class="text-primary-700 dark:text-primary-500 rounded-lg p-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700">View
-                  all</a>
+                <a href="#" class="text-primary-700 dark:text-primary-500 rounded-lg p-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700">Ver Todas</a>
               </div>
             </div>
             <!-- Table -->
-            <div class="mt-8 flex flex-col">
-              <div class="overflow-x-auto rounded-lg">
-                <div class="inline-block min-w-full align-middle">
-                  <div class="overflow-hidden shadow sm:rounded-lg">
-                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
-                      <thead class="bg-gray-50 dark:bg-gray-700">
-                        <tr>
-                          <th scope="col" class="p-4 text-left text-xs font-medium tracking-wider uppercase text-gray-500 dark:text-white">
-                            Transaction
-                          </th>
-                          <th scope="col" class="p-4 text-left text-xs font-medium tracking-wider uppercase text-gray-500 dark:text-white">
-                            Date &amp; Time
-                          </th>
-                          <th scope="col" class="p-4 text-left text-xs font-medium tracking-wider uppercase text-gray-500 dark:text-white">
-                            Amount
-                          </th>
-                          <th scope="col" class="p-4 text-left text-xs font-medium tracking-wider uppercase text-gray-500 dark:text-white">
-                            Status
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody class="bg-white dark:bg-gray-800">
-                        <tr>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-900 dark:text-white">
-                            Payment from <span class="font-semibold">Bonnie Green</span>
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-500 dark:text-gray-400">
-                            Apr 23 ,2021
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-semibold text-gray-900 dark:text-white">
-                            $2300
-                          </td>
-                          <td class="whitespace-nowrap p-4">
-                            <span class="mr-2 rounded-md bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-200">Completed</span>
-                          </td>
-                        </tr>
-                        <tr class="bg-gray-50 dark:bg-gray-700">
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-900 dark:text-white">
-                            Payment refund to <span class="font-semibold">#00910</span>
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-500 dark:text-gray-400">
-                            Apr 23 ,2021
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-semibold text-gray-900 dark:text-white">
-                            -$670
-                          </td>
-                          <td class="whitespace-nowrap p-4">
-                            <span class="mr-2 rounded-md bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-200">Completed</span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-900 dark:text-white">
-                            Payment failed from <span class="font-semibold">#087651</span>
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-500 dark:text-gray-400">
-                            Apr 18 ,2021
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-semibold text-gray-900 dark:text-white">
-                            $234
-                          </td>
-                          <td class="whitespace-nowrap p-4">
-                            <span class="mr-2 rounded-md bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-red-200">Cancelled</span>
-                          </td>
-                        </tr>
-                        <tr class="bg-gray-50 dark:bg-gray-700">
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-900 dark:text-white">
-                            Payment from <span class="font-semibold">Lana Byrd</span>
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-500 dark:text-gray-400">
-                            Apr 15 ,2021
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-semibold text-gray-900 dark:text-white">
-                            $5000
-                          </td>
-                          <td class="whitespace-nowrap p-4">
-                            <span class="mr-2 rounded-md bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-purple-200">In
-                              progress</span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-900 dark:text-white">
-                            Payment from <span class="font-semibold">Jese Leos</span>
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-500 dark:text-gray-400">
-                            Apr 15 ,2021
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-semibold text-gray-900 dark:text-white">
-                            $2300
-                          </td>
-                          <td class="whitespace-nowrap p-4">
-                            <span class="mr-2 rounded-md bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-200">Completed</span>
-                          </td>
-                        </tr>
-                        <tr class="bg-gray-50 dark:bg-gray-700">
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-900 dark:text-white">
-                            Payment from <span class="font-semibold">THEMESBERG LLC</span>
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-500 dark:text-gray-400">
-                            Apr 11 ,2021
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-semibold text-gray-900 dark:text-white">
-                            $560
-                          </td>
-                          <td class="whitespace-nowrap p-4">
-                            <span class="mr-2 rounded-md bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-200">Completed</span>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-900 dark:text-white">
-                            Payment from <span class="font-semibold">Lana Lysle</span>
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-500 dark:text-gray-400">
-                            Apr 6 ,2021
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-semibold text-gray-900 dark:text-white">
-                            $1437
-                          </td>
-                          <td class="whitespace-nowrap p-4">
-                            <span class="mr-2 rounded-md bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-200">Completed</span>
-                          </td>
-                        </tr>
-                        <tr class="bg-gray-50 dark:bg-gray-700">
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-900 dark:text-white">
-                            Payment to <span class="font-semibold">Joseph Mcfall</span>
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-500 dark:text-gray-400">
-                            Apr 1 ,2021
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-semibold text-gray-900 dark:text-white">
-                            $980
-                          </td>
-                          <td class="whitespace-nowrap p-4">
-                            <span class="mr-2 rounded-md bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-200">Completed</span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-900 dark:text-white">
-                            Payment from <span class="font-semibold">Alphabet LLC</span>
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-500 dark:text-gray-400">
-                            Mar 23 ,2021
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-semibold text-gray-900 dark:text-white">
-                            $11,436
-                          </td>
-                          <td class="whitespace-nowrap p-4">
-                            <span class="mr-2 rounded-md bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-purple-200">In
-                              progress</span>
-                          </td>
-                        </tr>
-                        <tr class="bg-gray-50 dark:bg-gray-700">
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-900 dark:text-white">
-                            Payment from <span class="font-semibold">Bonnie Green</span>
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-normal text-gray-500 dark:text-gray-400">
-                            Mar 23 ,2021
-                          </td>
-                          <td class="whitespace-nowrap p-4 text-sm font-semibold text-gray-900 dark:text-white">
-                            $560
-                          </td>
-                          <td class="whitespace-nowrap p-4">
-                            <span class="mr-2 rounded-md bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-200">Completed</span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Table />
             <!-- Card Footer -->
             <div class="flex items-center justify-between pt-3 sm:pt-6">
               <div>

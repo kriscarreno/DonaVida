@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const donaciones = ref([{ donante: 'Pedro', fecha: new Date(), tipoSangre: 'O', estado: 'Completado' }])
+const donaciones = ref([
+  { donante: 'Pedro', fecha: new Date(), tipoSangre: 'O', estado: 'Completado' },
+  { donante: 'Pedro', fecha: new Date(), tipoSangre: 'O', estado: 'Completado' },
+])
 </script>
 
 <template>

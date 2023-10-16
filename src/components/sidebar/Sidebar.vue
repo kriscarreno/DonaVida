@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <aside id="sidebar" class="fixed left-0 top-0 z-20 hidden h-full w-64 flex flex-shrink-0 flex-col pt-16 transition-width duration-75 lg:flex" aria-label="Sidebar">
+  <aside id="sidebar" class="fixed left-0 top-0 z-20 h-full w-64 flex flex-shrink-0 flex-col pt-16 transition-width duration-75 lg:flex" aria-label="Sidebar">
     <div class="relative min-h-0 flex flex-1 flex-col border-r border-gray-200 bg-white pt-0 dark:border-gray-700 dark:bg-gray-800">
       <div class="flex flex-1 flex-col overflow-y-auto pb-4 pt-5">
         <div class="flex-1 bg-white px-3 space-y-1 divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
@@ -20,13 +20,13 @@
               </form>
             </li>
             <li>
-              <a href="./index.html" class="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">
+              <a href="/Home" class="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">
                 <svg class="h-6 w-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" /><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" /></svg>
                 <span class="ml-3" sidebar-toggle-item="">Donaciones</span>
               </a>
             </li>
             <li>
-              <a href="./kanban.html" class="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">
+              <a href="/info" class="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">
                 <svg class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
                 <span class="ml-3 flex-1 whitespace-nowrap" sidebar-toggle-item="">Información</span>
               </a>

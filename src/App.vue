@@ -6,7 +6,7 @@ const currentRoute = computed(() => route.path)
 </script>
 
 <template>
-  <div v-if="currentRoute !== '/login' && currentRoute !== '/register'">
+  <div v-if="currentRoute !== '/auth/login' && currentRoute !== '/auth/register'">
     <Navbar />
     <div class="flex overflow-hidden bg-gray-50 pt-16 dark:bg-gray-900">
       <Sidebar class="sm:hidden" />

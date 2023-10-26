@@ -1,6 +1,6 @@
 <template>
-  <div class="px-6 py-6">
-    <h1 class="text-2xl">
+  <div class="flex flex-col items-center px-6 py-6">
+    <h1 class="mb-2 text-3xl">
       Requisitos para ser donante
     </h1>
     <div class="rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:p-6 xl:p-8">
